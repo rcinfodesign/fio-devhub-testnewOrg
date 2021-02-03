@@ -1,0 +1,38 @@
+{% if include.name %}
+    {% assign name = include.name %}
+{% else %}
+    {% assign name = site.data.integrations.default %}
+{% endif %}
+
+{% assign thisintegrator = site.data.integrations.integrators[name] %}
+
+test1 = {{ site.data.integrations.integrators[0].name }} 
+
+Integrator: {{ thisintegrator.name }}
+
+|Category	|Feature|   Status|
+|---|---|---|
+|FIO Token	|Create FIO Wallet| {% if thisintegrator.token.createwallet %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|Check FIO Balance| {% if thisintegrator.token.checkbalance %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|Transfer FIO| {% if thisintegrator.token.transferfio %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|Transaction history | {% if thisintegrator.token.txnhistory %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|Import FIO Private Key| {% if thisintegrator.token.importkey %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|Import mnemonic phrase| {% if thisintegrator.token.importphrase %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|FIO Address	|Register FIO Address on wallet domain (api or link to reg site) | {% if thisintegrator.address.register %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|Renew FIO address | {% if thisintegrator.address.renew %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|Display registered FIO Addresses| {% if thisintegrator.address.show %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|Register FIO Address on custom domain | {% if thisintegrator.address.customdomain %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|FIO Domains	|Register FIO Domain (api or link to reg site)| {% if thisintegrator.domain.register %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|Renew FIO Domain| {% if thisintegrator.domain.renew %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|Display registered FIO Domains| {% if thisintegrator.domain.show %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|FIO Send	|Send crypto using FIO Address| {% if thisintegrator.send.send %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|FIO Receive	|Receive crypto using FIO Address (via direct send)| {% if thisintegrator.receive.receive %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|Map FIO Address to other blockchain public addreses| {% if thisintegrator.receive.map %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|FIO Requests	|Submitting new FIO Request| {% if thisintegrator.request.submit %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|Rejecting a FIO Request| {% if thisintegrator.request.reject %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|List pending FIO Requests| {% if thisintegrator.request.pending %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|List sent FIO Requests | {% if thisintegrator.request.sent %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|Add memo to the FIO Request| {% if thisintegrator.request.requestmemo %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|FIO Data |Record OBT on Send and other FIO Transactions| {% if thisintegrator.data.recordobt %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|Retrieve and displaying OBT data| {% if thisintegrator.data.displayobt %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+|	|Add a memo when creating an OBT Record| {% if thisintegrator.data.memo %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|

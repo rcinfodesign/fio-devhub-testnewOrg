@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+{{ content }}
+
+{% assign integrators = site.data.integrations.integrators %}
+
+intezzzzzrators = {{ integrators }}
+
+<select name="integrator" onchange="javascript:location.href = this.value;">
+{% for integrator in integrators %}
+    <option value="/docs/sdk-typescript/test?name2=adsfadsf">{{ integrator.name }}</option>
+{% endfor %}
+</select>
+
+
+
+
+

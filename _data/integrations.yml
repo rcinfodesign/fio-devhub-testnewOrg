@@ -1,0 +1,77 @@
+default: "edge"
+template: >-
+  mywallet:
+    name: "Mywallet"
+    description: "Wallet description"
+    token:
+      createwallet: true = Can create a FIO wallet
+      checkbalance: true = Can check FIO balance
+      transferfio: true = Can transfer FIO to another wallet
+      txnhistory: true = Shows FIO transaction history
+      importkey: true = Can import a FIO private key
+      importphrase: true = Can import a seed phrase to get FIO key
+    address:
+      register: true = Can register a FIO Address (in wallet or using registration site)
+      renew: true = Can renew a FIO Address  (in wallet or using registration site)
+      show: true = Displays all FIO Addresses associated with FIO Public Key
+      customdomain: true
+    domain:
+      register: true = Can register a FIO Domain (in wallet or using registration site)
+      renew: true = Can renew a FIO Domain  (in wallet or using registration site)
+      show: true = Displays all FIO Domains associated with FIO Public Key
+    send:
+      send: true = Can send crypto using a FIO Address
+    receive:
+      receive: true = Can receive crypto to a FIO Address
+      map: true = Can map FIO Address to other blockchain public addreses
+    request:
+      submit: true = Can submit a FIO Request
+      reject: true = Can reject incoming FIO Requests
+      pending: true = Can view incoming pending FIO Requests
+      sent: true = Can view outgoing sent FIO Requests
+      requestmemo: true = Can add a memo to the FIO Request
+    data:
+      recordobt: true = OBT record is attached to transactions when both users have a FIO Address
+      displayobt: true = OBT data is displayed when showing crypto transaction history
+      memo: true = Can add a memo when creating an OBT Record
+integrators:
+  - edge:
+    name: "Edge"
+    description: "Edge wallet"
+    token: 
+      createwallet: true
+      checkbalance: true
+      transferfio: true
+      txnhistory: true
+      importkey: true
+      importphrase: false
+    address:
+      register: true
+      renew: true
+      show: true
+      customdomain: true
+    domain:
+      register: true
+      renew: true
+      show: true
+    send:
+      send: true
+    receive:
+      receive: true
+      map: true
+    request:
+      submit: true
+      reject: true
+      pending: true
+      sent: true
+      requestmemo: true
+    data:
+      recordobt: true
+      displayobt: true
+      memo: true
+  - coinomi:
+    name: "Coinomi"
+    description: "Coinomi wallet description"
+    checklist: 
+    - items:
+      token: true
