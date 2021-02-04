@@ -1,0 +1,26 @@
+
+
+
+<h1>My page</h1>
+<div id="mydiv">
+    <h2>This div is updated</h2>
+</div>
+<div>
+    <a href="#">Update the div!</a>
+</div>
+
+<select name="ilist" id="ilist">
+  <option value="one">one</option>
+  <option value="two">two</option>
+</select>
+
+
+<script>
+$(function() {
+  $('#ilist').change(function() {
+    
+    $('#mydiv').html(this.value);
+
+  });
+});
+</script>

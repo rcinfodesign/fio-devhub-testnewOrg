@@ -7,15 +7,30 @@ description: Test
 <div>
     {% assign integrators = site.data.integrations.integrators %}
     <label for="integratorlist">Select:</label>
-    <select name="integratorlist" onchange="javascript:location.href = this.value;">
+    <select name="ilist" id="ilist">
         {% for integrator in integrators %}
-            <option value="{{integrator.name}}" >{{ integrator.name }}</option>
+            <option value="newvalue" >{{ integrator.name }}</option>
         {% endfor %}
     </select>
 </div>
 
-{% assign testname = "edge" %}
+<div id="mydiv">
+adfadsfadsf
+    {% assign testname = 'edge' %}
+    {% include checklist.html name=testname %}
+</div>
 
-{% include checklist.html name=testname %}
+    
 
+<script>
+$(function() {
+  $('#ilist').change(function() {
+    
+    $('#mydiv').html(this.value);
+
+  });
+
+
+});
+</script>
 

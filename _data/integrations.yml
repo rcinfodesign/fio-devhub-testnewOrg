@@ -35,7 +35,7 @@ template: >-
       displayobt: true = OBT data is displayed when showing crypto transaction history
       memo: true = Can add a memo when creating an OBT Record
 integrators:
-  - edge:
+  edge:
     name: "Edge"
     description: "Edge wallet"
     token: 
@@ -69,7 +69,7 @@ integrators:
       recordobt: true
       displayobt: true
       memo: true
-  - coinomi:
+  coinomi:
     name: "Coinomi"
     description: "Coinomi wallet description"
     checklist: 

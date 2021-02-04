@@ -36,3 +36,135 @@ Integrator: {{ thisintegrator.name }}
 |FIO Data |Record OBT on Send and other FIO Transactions| {% if thisintegrator.data.recordobt %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
 |	|Retrieve and displaying OBT data| {% if thisintegrator.data.displayobt %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
 |	|Add a memo when creating an OBT Record| {% if thisintegrator.data.memo %} ![Image]({{ site.baseurl }}/assets/img/completed.png) {% endif %}|
+
+<table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Feature</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>FIO Token</td>
+        <td>Create FIO Wallet</td>
+        <td>{% if thisintegrator.token.createwallet %} <img src="/assets/img/completed.png" alt="Completed image" /> {% endif %} </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>Check FIO Balance</td>
+        <td>{% if thisintegrator.token.checkbalance %} <img src="/assets/img/completed.png" alt="Completed image" /> {% endif %} </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>Transfer FIO</td>
+        <td>{% if thisintegrator.token.transferfio %} <img src="/assets/img/completed.png" alt="Completed image" /> {% endif %} </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>Transaction history</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>Import FIO Private Key</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>Import mnemonic phrase</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>FIO Address</td>
+        <td>Register FIO Address on wallet domain (api or link to reg site)</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>Renew FIO address</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>Display registered FIO Addresses</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>Register FIO Address on custom domain</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>FIO Domains</td>
+        <td>Register FIO Domain (api or link to reg site)</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>Renew FIO Domain</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>Display registered FIO Domains</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>FIO Send</td>
+        <td>Send crypto using FIO Address</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>FIO Receive</td>
+        <td>Receive crypto using FIO Address (via direct send)</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>Map FIO Address to other blockchain public addreses</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>FIO Requests</td>
+        <td>Submitting new FIO Request</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>Rejecting a FIO Request</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>List pending FIO Requests</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>List sent FIO Requests</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>Add memo to the FIO Request</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>FIO Data</td>
+        <td>Record OBT on Send and other FIO Transactions</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>Retrieve and displaying OBT data</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td>Add a memo when creating an OBT Record</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
