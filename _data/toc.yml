@@ -14,13 +14,15 @@
           url: "docs/fio-protocol/voting"
         - title: Multisig
           url: "docs/fio-protocol/multisig"
-        - title: Technology Provider ID
-          url: "docs/fio-protocol/tpid"
         - title: FIO Improvement Proposals
           url: "docs/fio-protocol/fips"
     - title: "Integration Guide"
       url: "docs/integration-guide"
       children:
+        - title: Earn FIO with your TPID
+          url: "docs/integration-guide/tpid"
+        - title: Participate in Governance
+          url: "docs/integration-guide/governance"
         - title: Using the API
           url: "docs/integration-guide/using-the-api"
         - title: Submitting Transactions
@@ -50,13 +52,17 @@
         - title: Sample UX
           url: "docs/integration-guide/sample-ux"
     - title: "Wallets"
-      url: "docs/wallets/wallet-examples"
+      url: "docs/wallets"
       children:
+        - title: Benefits & Bounties
+          url: "docs/wallets"
         - title: Wallet integration examples
           url: "docs/wallets/wallet-examples"
     - title: "Exchanges"
       url: "docs/exchanges"
       children:
+        - title: Benefits & Incentives
+          url: "docs/exchanges"
         - title: Token deposits
           url: "docs/exchanges/exchange-token-deposit"
         - title: Token withdrawals
@@ -72,8 +78,12 @@
       children:
         - title: Using the Typescript SDK
           url: "docs/sdk-typescript/sdk-js-using"
-        - title: Fio Request Example
+        - title: Example - Transfer FIO Tokens
+          url: "docs/sdk-typescript/transfer-fio-tokens-example"
+        - title: Example - FIO Request
           url: "docs/sdk-typescript/fio-request-example"
+        - title: Example - Review Pending Requests
+          url: "docs/sdk-typescript/review-pending-fio-requests-example"       
     - title: "Go SDK"
       url: "docs/sdk-go"
     - title: "Kotlin SDK"
@@ -89,6 +99,8 @@
           url: "docs/recipes/linkauth"
         - title: Validating a FIO Public Key
           url: "docs/recipes/validation"
+        - title: Get FIO Names from Table
+          url: "docs/recipes/fio-names-from-table"
     - title: "FIO Chain"
       url: "docs/chain"
       children:
@@ -104,13 +116,25 @@
           url: "docs/chain/testnet"
         - title: Mainnet
           url: "docs/chain/mainnet"
-        - title: Being a block producer
-          url: "docs/chain/bp"
         - title: clio
           url: "docs/chain/clio"
         - title: Vulnerability disclosure policy
           url: "docs/chain/disclosure"
         - title: New FIO Contracts
           url: "docs/chain/newcontracts"
+    - title: "Block Production"
+      url: "docs/bp"
+      children:
+        - title: Being a Producer
+          url: "docs/bp/bp"
+        - title: Setting fees
+          url: "docs/bp/fee-setting"
+        - title: Claiming rewards
+          url: "docs/bp/claiming-rewards"
+    - title: "FIO Developers Guide"
+      url: "docs/developers/git"
+      children:
+        - title: Git Branching and Release
+          url: "docs/developers/git"
     - title: "Blog"
       url: blog
