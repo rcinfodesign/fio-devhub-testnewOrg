@@ -8135,6 +8135,59 @@ paths:
                 except: null
       tags:
         - Transactions
+  /get_actions:
+    post:
+      description: Returns an object containing the smart contract abi.
+      summary: Get raw ABI for contract
+      parameters:
+        - in: body
+          name: body
+          schema:
+            type: object
+            properties:
+              accountname:
+                type: string
+                title: FIO Public Key
+                description: Valid WIF Public Key with FIO Prefix
+              pos:
+                type: integer
+                description: >-
+                  The starting position of the record, starting at 0.
+              offset:
+                type: integer
+                description: >-
+                  First request from list to return. If omitted, 0 is assumed.            
+            required:
+              - fio_public_key
+            title: Signed transaction request
+            example:
+              accountname: aftyershcu22
+              pos: 100
+              offset: 0
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+            properties:
+              account_name:
+                type: string
+              code_hash:
+                type: string
+              abi_hash:
+                type: string
+              abi:
+                type: string
+          examples:
+            application/json:
+              account_name: fio.system
+              code_hash: 0e5e404480e07b5b1c9d0d8cfbe4f04b8f3fd3477a42251bab8191e6e6c241a8
+              abi_hash: d98bbfa97018efcdfbbf42b62406707bc17498e630f58e4529029af71042d861
+              abi: >-
+                DmVvc2lvOjphYmkvMS4wABMHZmlvbmFtZQAIBG5hbWUGc3RyaW5nCG5hbWVoYXNoBnVpbnQ2NAZkb21haW4Gc3RyaW5nCmRvbWFpbmhhc2gGdWludDY0CmV4cGlyYXRpb24GdWludDY0DW93bmVyX2FjY291bnQEbmFtZQlhZGRyZXNzZXMIc3RyaW5nW10XYnVuZGxlZWxpZ2libGVjb3VudGRvd24GdWludDY0BmRvbWFpbgAFBG5hbWUGc3RyaW5nCmRvbWFpbmhhc2gGdWludDY0CWlzX3B1YmxpYwV1aW50OApleHBpcmF0aW9uBnVpbnQzMgdhY2NvdW50BnVpbnQ2NAljaGFpbkxpc3QAAwRuYW1lBnN0cmluZwJpZAZ1aW50NjQJY2hhaW5oYXNoBnVpbnQzMgplb3Npb19uYW1lAAMHYWNjb3VudARuYW1lCWNsaWVudGtleQZzdHJpbmcHa2V5aGFzaAZ1aW50NjQJY2hhaW5wYWlyAAMFaW5kZXgGdWludDY0CWNoYWlubmFtZQZzdHJpbmcJY2hhaW5oYXNoBnVpbnQ2NApyZWdhZGRyZXNzAAULZmlvX2FkZHJlc3MGc3RyaW5nFG93bmVyX2Zpb19wdWJsaWNfa2V5BnN0cmluZwdtYXhfZmVlBnVpbnQ2NAVhY3RvcgRuYW1lBHRwaWQGc3RyaW5nCmFkZGFkZHJlc3MABgtmaW9fYWRkcmVzcwZzdHJpbmcKdG9rZW5fY29kZQZzdHJpbmcOcHVibGljX2FkZHJlc3MGc3RyaW5nB21heF9mZWUGdWludDY0BWFjdG9yBG5hbWUEdHBpZAZzdHJpbmcJcmVnZG9tYWluAAUKZmlvX2RvbWFpbgZzdHJpbmcUb3duZXJfZmlvX3B1YmxpY19rZXkGc3RyaW5nB21heF9mZWUGdWludDY0BWFjdG9yBG5hbWUEdHBpZAZzdHJpbmcLcmVuZXdkb21haW4ABApmaW9fZG9tYWluBnN0cmluZwdtYXhfZmVlBnVpbnQ2NAR0cGlkBnN0cmluZwVhY3RvcgRuYW1lDHJlbmV3YWRkcmVzcwAEC2Zpb19hZGRyZXNzBnN0cmluZwdtYXhfZmVlBnVpbnQ2NAR0cGlkBnN0cmluZwVhY3RvcgRuYW1lCWV4cGRvbWFpbgACBWFjdG9yBG5hbWUGZG9tYWluBnN0cmluZwxleHBhZGRyZXNzZXMABAVhY3RvcgRuYW1lBmRvbWFpbgZzdHJpbmcOYWRkcmVzc19wcmVmaXgGc3RyaW5nF251bWJlcl9hZGRyZXNzZXNfdG9fYWRkBnVpbnQ2NAxzZXRkb21haW5wdWIABQpmaW9fZG9tYWluBnN0cmluZwlpc19wdWJsaWMFdWludDgHbWF4X2ZlZQZ1aW50NjQFYWN0b3IEbmFtZQR0cGlkBnN0cmluZwtidXJuZXhwaXJlZAAACnJlbW92ZW5hbWUAAAxyZW1vdmVkb21haW4AAApybXZhZGRyZXNzAAALZGVjcmNvdW50ZXIAAQtmaW9fYWRkcmVzcwZzdHJpbmcKYmluZDJlb3NpbwADB2FjY291bnQEbmFtZQpjbGllbnRfa2V5BnN0cmluZwhleGlzdGluZwRib29sDQAAxuqmZJi6CnJlZ2FkZHJlc3MAAADG6qZkUjIKYWRkYWRkcmVzcwAAAJjOSJqYuglyZWdkb21haW4AAKYzkiauproLcmVuZXdkb21haW4AgLG6KRmuproMcmVuZXdhZGRyZXNzAAAAmM5ImmpXCWV4cGRvbWFpbgCAFcbqpmRqVwxleHBhZGRyZXNzZXMAAJK6rnY1rz4LYnVybmV4cGlyZWQAAICSZqpNpboKcmVtb3ZlbmFtZQAwnZE0qU2lugxyZW1vdmVkb21haW4AAADG6qZktrwKcm12YWRkcmVzcwBwdJ3OSJqywgxzZXRkb21haW5wdWIAAAB1mCqRpjsKYmluZDJlb3NpbwAEAAAAWEkzqVsDaTY0AQRuYW1lAQZzdHJpbmcHZmlvbmFtZQAAAABPZyRNA2k2NAEEbmFtZQEGc3RyaW5nBmRvbWFpbgAAAADg6UxDA2k2NAEEbmFtZQEGc3RyaW5nCWNoYWluTGlzdABANTJPTREyA2k2NAEHYWNjb3VudAEGdWludDY0CmVvc2lvX25hbWUAAAAA=
+      operationId: get_actions
+      tags:
+        - V1 History API
   transaction:
     options:
       description: >-
@@ -8843,6 +8896,12 @@ tags:
     description: Sending transactions to the FIO blockchain
   - name: Actions
     description: 'List of actions to sign for [push_transaction](#post-/push_transaction)'
+  - name: Block Producer Actions
+    description: List of Block Producer actions.
+  - name: V1 History API
+    description: >-
+      The The history_api_plugin exposes functionality from the history_plugin to the RPC API interface 
+      managed by the http_plugin, providing read-only access to blockchain data.
 x-stoplight:
   docs:
     includeDownloadLink: true
