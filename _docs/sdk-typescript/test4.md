@@ -3,15 +3,32 @@ title: Test4
 description: Test4
 ---
 
-<select id="integrator-dropdown" name="integrators">
-</select>
+<div>
+  <table>
+      <tr>
+        <td>
+          Select an integrator:
+          <select id="integrator-dropdown" name="integrators">
+          </select>
+        </td>
+        <td> &nbsp;&nbsp;&nbsp;&nbsp; </td>
+        <td>
+          Or, select a feature:
+          <select id="feature-dropdown" name="integrators">
+          </select>
+        </td>
+      </tr>
+  </table>
+</div>
+
+<br>
 
 <script>
   var integrator = "Edge"
 
   let dropdown = $('#integrator-dropdown');
   dropdown.empty();
-  dropdown.append('<option selected="true" disabled>Choose Integrator</option>');
+  dropdown.append('<option selected="true" disabled>Integrator</option>');
   dropdown.prop('selectedIndex', 0);
 
   $.getJSON("integrations.json", function (data) {
@@ -26,18 +43,23 @@ description: Test4
       $.each(result, function(i, idata) {
         if (i == selected.val()) {
           $.each(idata.features, function(feature, avail) {
-            // First clear it, then fill it if true
             $("#" + feature).attr({"src": ""});
-            if (avail) {$("#" + feature).attr({"src": "/assets/img/completed.png"});};
+            if (avail) {
+              $("#" + feature).attr({"src": "/assets/img/completed.png"});
+            } else {
+              $("#" + feature).attr({"src": "/assets/img/redx.png"});
+            };
           });
         }
       });
     });
+    // chrome requires this or it does not update
+    $('#inttable').hide().show(0);
   });
 </script>
 
 
-<table>
+<table id="inttable">
   <thead>
     <tr>
       <th>Category</th>
@@ -47,7 +69,7 @@ description: Test4
   </thead>
   <tbody>
     <tr>
-      <td>FIO Token</td>
+      <td><i>FIO Token</i></td>
       <td>Create FIO Wallet</td>
       <td> <img id="token-createwallet" src=""> </td>
     </tr>
@@ -77,8 +99,8 @@ description: Test4
       <td> <img id="token-importphrase" src=""> </td>
     </tr>
     <tr>
-      <td>FIO Address</td>
-      <td>Register FIO Address on wallet domain (api or link to reg site)</td>
+      <td><i>FIO Address</i></td>
+      <td>Register FIO Address (api or link to reg site)</td>
       <td> <img id="address-register" src=""> </td>
     </tr>
     <tr>
@@ -97,14 +119,14 @@ description: Test4
       <td> <img id="address-customdomain" src=""> </td>
     </tr>
     <tr>
-      <td>FIO Domains</td>
+      <td><i>FIO Domains</i></td>
       <td>Register FIO Domain (api or link to reg site)</td>
-      <td> <img id="domain-renew" src=""> </td>
+      <td> <img id="domain-register" src=""> </td>
     </tr>
     <tr>
       <td> </td>
       <td>Renew FIO Domain</td>
-      <td> <img id="createwallet" src=""> </td>
+      <td> <img id="domain-renew" src=""> </td>
     </tr>
     <tr>
       <td> </td>
@@ -112,34 +134,29 @@ description: Test4
       <td> <img id="domain-show" src=""> </td>
     </tr>
     <tr>
-      <td>FIO Send</td>
+      <td><i>FIO Send</i></td>
       <td>Send crypto using FIO Address</td>
       <td> <img id="send-send" src=""> </td>
     </tr>
     <tr>
-      <td>FIO Receive</td>
+      <td><i>FIO Receive</i></td>
       <td>Receive crypto using FIO Address (via direct send)</td>
       <td> <img id="receive-receive" src=""> </td>
     </tr>
     <tr>
       <td> </td>
-      <td>Map FIO Address to other blockchain public addreses</td>
+      <td>Map FIO Address to other blockchain public addresses</td>
       <td> <img id="receive-map" src=""> </td>
     </tr>
     <tr>
-      <td>FIO Requests</td>
-      <td>Submitting new FIO Request</td>
+      <td><i>FIO Requests</i></td>
+      <td>Submit new FIO Request</td>
       <td> <img id="request-submit" src=""> </td>
     </tr>
     <tr>
       <td> </td>
-      <td>Rejecting a FIO Request</td>
-      <td> <img id="request-reject" src=""> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>List pending FIO Requests</td>
-      <td> <img id="request-pending" src=""> </td>
+      <td>Add memo to the FIO Request</td>
+      <td> <img id="request-requestmemo" src=""> </td>
     </tr>
     <tr>
       <td> </td>
@@ -148,23 +165,28 @@ description: Test4
     </tr>
     <tr>
       <td> </td>
-      <td>Add memo to the FIO Request</td>
-      <td> <img id="request-requestmemo" src=""> </td>
+      <td>List pending or received FIO Requests</td>
+      <td> <img id="request-pending" src=""> </td>
     </tr>
     <tr>
-      <td>FIO Data</td>
-      <td>Record OBT on Send and other FIO Transactions</td>
+      <td> </td>
+      <td>Reject a FIO Request</td>
+      <td> <img id="request-reject" src=""> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Cancel a FIO Request</td>
+      <td> <img id="request-cancel" src=""> </td>
+    </tr>
+    <tr>
+      <td><i>FIO Data</i></td>
+      <td>Record transaction memo/metadata on FIO Send</td>
       <td> <img id="data-recordobt" src=""> </td>
     </tr>
     <tr>
       <td> </td>
-      <td>Retrieve and displaying OBT data</td>
+      <td>Retrieve and display FIO memo/metadata</td>
       <td> <img id="data-displayobt" src=""> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Add a memo when creating an OBT Record</td>
-      <td> <img id="data-memo" src=""> </td>
     </tr>
   </tbody>
 </table>

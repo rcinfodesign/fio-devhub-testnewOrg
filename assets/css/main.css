@@ -3791,6 +3791,13 @@ input[type=button].btn-block {
     margin-left: 0
 }
 
+.mydrop {
+    color: #222;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+}
+
 .dropdown-menu {
     position: absolute;
     top: 100%;
