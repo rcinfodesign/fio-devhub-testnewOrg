@@ -1,0 +1,61 @@
+{
+  "Edge": 
+    {
+      "description": "Edge wallet",
+      "features": {
+        "token-createwallet": true,
+        "token-checkbalance": true,
+        "token-transferfio": true,
+        "token-txnhistory": true,
+        "token-importkey": true,
+        "token-importphrase": false,
+        "address-register": true,
+        "address-renew": true,
+        "address-show": true,
+        "address-customdomain": true,
+        "domain-register": true,
+        "domain-renew": true,
+        "domain-show": true,
+        "send-send": true,
+        "receive-receive": true,
+        "receive-map": true,
+        "request-submit": true,
+        "request-requestmemo": true,
+        "request-sent": true,
+        "request-pending": true,
+        "request-reject": true,
+        "request-cancel": true,
+        "data-recordobt": true,
+        "data-displayobt": true
+      }
+    },
+  "Coinomi": {
+    "description": "Coinomi wallet",
+    "features": {
+      "token-createwallet": true,
+      "token-checkbalance": false,
+      "token-transferfio": false,
+      "token-txnhistory": false,
+      "token-importkey": true,
+      "token-importphrase": false,
+      "address-register": true,
+      "address-renew": false,
+      "address-show": true,
+      "address-customdomain": false,
+      "domain-register": false,
+      "domain-renew": true,
+      "domain-show": true,
+      "send-send": false,
+      "receive-receive": true,
+      "receive-map": false,
+      "request-submit": true,
+      "request-requestmemo": true,
+      "request-sent": true,
+      "request-pending": true,
+      "request-reject": true,
+      "request-cancel": true,
+      "data-recordobt": true,
+      "data-displayobt": true
+    }
+  }
+}

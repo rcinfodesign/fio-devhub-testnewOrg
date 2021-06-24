@@ -24,6 +24,8 @@
           url: "docs/fio-protocol/multisig"
         - title: FIO Improvement Proposals
           url: "docs/fio-protocol/fips"
+        - title: FIO Integration Partners
+          url: "docs/fio-protocol/integrators"
     - title: "Wallet Integration Guide"
       url: "docs/integration-guide"
       children:
