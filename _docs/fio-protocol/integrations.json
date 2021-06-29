@@ -1,4 +1,33 @@
 {
+  "Coinomi": {
+    "description": "Coinomi wallet",
+    "features": {
+      "token-createwallet": true,
+      "token-checkbalance": true,
+      "token-transferfio": true,
+      "token-txnhistory": true,
+      "token-importkey": false,
+      "token-importphrase": false,
+      "address-register": true,
+      "address-renew": false,
+      "address-show": true,
+      "address-customdomain": false,
+      "domain-register": false,
+      "domain-renew": true,
+      "domain-show": true,
+      "send-send": true,
+      "receive-receive": true,
+      "receive-map": true,
+      "request-submit": true,
+      "request-requestmemo": true,
+      "request-sent": true,
+      "request-pending": true,
+      "request-reject": true,
+      "request-cancel": false,
+      "data-recordobt": false,
+      "data-displayobt": false
+    }
+  },
   "Edge": 
     {
       "description": "Edge wallet",
@@ -29,33 +58,33 @@
         "data-displayobt": true
       }
     },
-  "Coinomi": {
-    "description": "Coinomi wallet",
+  "Guarda": {
+    "description": "Guarda wallet",
     "features": {
       "token-createwallet": true,
-      "token-checkbalance": false,
-      "token-transferfio": false,
-      "token-txnhistory": false,
+      "token-checkbalance": true,
+      "token-transferfio": true,
+      "token-txnhistory": true,
       "token-importkey": true,
-      "token-importphrase": false,
+      "token-importphrase": true,
       "address-register": true,
-      "address-renew": false,
+      "address-renew": true,
       "address-show": true,
       "address-customdomain": false,
       "domain-register": false,
-      "domain-renew": true,
-      "domain-show": true,
-      "send-send": false,
+      "domain-renew": false,
+      "domain-show": false,
+      "send-send": true,
       "receive-receive": true,
-      "receive-map": false,
+      "receive-map": true,
       "request-submit": true,
       "request-requestmemo": true,
       "request-sent": true,
       "request-pending": true,
       "request-reject": true,
-      "request-cancel": true,
-      "data-recordobt": true,
-      "data-displayobt": true
+      "request-cancel": false,
+      "data-recordobt": false,
+      "data-displayobt": false
     }
   }
 }
