@@ -13,7 +13,7 @@ For example, delegated account permissions may be needed when using the FIO Regi
 
 ## Example of a delegated permissions
 
-The following is an example of a delegated permission. In this case the `fo44zffcsyme` account owns the **domainwithpermissions** FIO Domain. This domain is private, but the wallet that owns **domainwithpermissions** wants to enable their users to get free FIO Crypto Handles on the FIO Registration site. So, a second account `y2khj2vtcfhq` is given active permissions on the account. In this case you may have permssions that look like the following:
+The following is an example of a delegated permission. In this case the `fo44zffcsyme` Foundation-controlled account owns the **domainwithpermissions** FIO Domain. This domain is private, but the wallet account `y2khj2vtcfhq` wants to enable their users to register free FIO Crypto Handles on the domain. So, the wallet's account `y2khj2vtcfhq` is given active permissions on the `fo44zffcsyme` account. In this case you may have permssions that look like the following:
 
 ![Image]({{ site.baseurl }}/assets/img/permissions.png)
 
@@ -26,7 +26,7 @@ const fetch = require('node-fetch');
 
 const httpEndpoint = 'https://fiotestnet.blockpane.com'
 
-const privateKey = 'privatekey'   // Private key for 4t2x5ac21rbg account
+const privateKey = 'privatekey'   // Private key for y2khj2vtcfhq account
 
 const fiojsRegaddress = async () => {
   info = await (await fetch(httpEndpoint + '/v1/chain/get_info')).json();
@@ -53,7 +53,7 @@ const fiojsRegaddress = async () => {
         owner_fio_public_key: 'FIO-Public-Key-of-new-crypto-handle-owner',
         max_fee: 100000000000,
         tpid: '',
-        actor: 'y2khj2vtcfhq'
+        actor: 'fo44zffcsyme'
       },
     }]
   };
